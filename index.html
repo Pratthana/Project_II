@@ -36,11 +36,11 @@
             </div>
             <form class="user">
               <div class="form-group">
-                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                <input type="email" class="form-control form-control-user" id="email"
                   aria-describedby="emailHelp" placeholder="Enter Email Address..." required>
               </div>
               <div class="form-group">
-                <input type="password" class="form-control form-control-user" id="exampleInputPassword"
+                <input type="password" class="form-control form-control-user" id="password"
                   placeholder="Password" required>
               </div>
               <div class="form-group">
@@ -49,9 +49,9 @@
                   <label class="custom-control-label" for="customCheck">Remember Me</label>
                 </div>
               </div>
-              <a href="dashboard.html" class="btn btn-primary btn-user btn-block">
-                Login
-              </a>
+      
+      
+              <input type="button" value="Login" class="btn btn-primary btn-user btn-block" onclick="login()">
             </form>
             <hr>
             <div class="text-center">
@@ -68,6 +68,23 @@
   </div>
 
   </div>
+  <script>
+    function login(){
+      var id = document.getElementById("email").value;
+      var pass = document.getElementById("password").value;
+      var cid = "admin@nw.com";
+      var cpass = "12345**";
+      console.log(id);
+      console.log(pass);
+      if(id==cid && pass==cpass) {
+          console.log("true");
+          window.location.href = ("dashboard.html");
+        }else{
+          window.alert("Wrong email or password!");
+        }
+    };
+  </script>
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
